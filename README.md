@@ -113,3 +113,19 @@ Esto levanta el frontend en http://localhost:4200 y enruta las llamadas a `/task
 ---
 
 ¡Listo para usar y modificar según tus necesidades!
+
+---
+
+## Capturas de pantalla
+
+### Lista de tareas
+![Lista de tareas](./assets/screenshots/todo-list.png)
+
+### Formulario de edición
+![Editar tarea](./assets/screenshots/edit-task.png)
+
+### Selector de fecha
+![Selector de fecha](./assets/screenshots/datepicker.png)
+
+### Confirmación de borrado
+![Confirmar eliminar](./assets/screenshots/delete-confirm.png)

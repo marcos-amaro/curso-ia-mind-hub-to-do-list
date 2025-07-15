@@ -1,0 +1,57 @@
+<mat-card class="task-list-card">
+  <div class="task-list-header">
+    <h2>Mis Tareas</h2>
+    <button mat-raised-button color="primary" (click)="goToNew()">
+      <mat-icon>add</mat-icon> Nueva Tarea
+    </button>
+  </div>
+  <mat-table [dataSource]="tasks" class="mat-elevation-z2 responsive-table">
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef>Título</mat-header-cell>
+      <mat-cell *matCellDef="let task">{{ task.title }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef>Descripción</mat-header-cell>
+      <mat-cell *matCellDef="let task">{{ task.description }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <mat-header-cell *matHeaderCellDef>Vencimiento</mat-header-cell>
+      <mat-cell *matCellDef="let task">{{ task.dueDate ? (task.dueDate | date:'shortDate') : '-' }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="priority">
+      <mat-header-cell *matHeaderCellDef>Prioridad</mat-header-cell>
+      <mat-cell *matCellDef="let task">
+        <mat-chip [color]="task.priority === 'High' ? 'warn' : (task.priority === 'Medium' ? 'accent' : 'primary')" selected>
+          {{ task.priority }}
+        </mat-chip>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef>Estado</mat-header-cell>
+      <mat-cell *matCellDef="let task">
+        <mat-chip [color]="task.status === 'Completed' ? 'primary' : 'accent'" selected>
+          {{ task.status === 'Completed' ? 'Completada' : 'Pendiente' }}
+        </mat-chip>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+      <mat-cell *matCellDef="let task">
+        <button mat-icon-button color="primary" matTooltip="Editar" (click)="goToEdit(task.id!)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" matTooltip="Eliminar" (click)="deleteTask(task.id!)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</mat-card>

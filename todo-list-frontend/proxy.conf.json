@@ -1,0 +1,6 @@
+{
+  "/tasks": {
+    "target": "http://localhost:5067",
+    "secure": false
+  }
+}

@@ -1,0 +1,53 @@
+// Header for title and new button
+.task-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+// Modern responsive styles for the task list
+.task-list-card {
+  margin: 2rem auto;
+  max-width: 1000px;
+  padding: 2rem 1rem;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+}
+
+.responsive-table {
+  width: 100%;
+  overflow-x: auto;
+  font-size: 1rem;
+}
+
+mat-header-cell, mat-cell {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+mat-header-row, mat-row {
+  display: flex;
+  align-items: center;
+}
+
+mat-header-cell, mat-cell {
+  flex: 1 1 0;
+}
+
+mat-chip {
+  font-size: 0.95em;
+  margin-right: 0.25em;
+}
+
+@media (max-width: 700px) {
+  .task-list-card {
+    padding: 1rem 0.25rem;
+  }
+  .responsive-table {
+    font-size: 0.92rem;
+  }
+  mat-header-cell, mat-cell {
+    padding: 0.5rem 0.2rem;
+  }
+}

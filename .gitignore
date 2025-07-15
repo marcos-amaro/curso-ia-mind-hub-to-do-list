@@ -1,0 +1,38 @@
+# Compilados y binarios
+[Bb]in/
+[Oo]bj/
+
+# Archivos de usuario de Visual Studio
+*.suo
+*.user
+*.vspscc
+*.vssscc
+*.bak
+*.scc
+
+# Paquetes NuGet
+packages/
+*.nupkg
+# Restauración de paquetes NuGet
+.nuget/nuget.exe
+.nuget/NuGet.targets
+
+# Cache de Visual Studio
+.vs/
+
+# Archivos de publicación
+[Pp]ublish/
+*.publishproj
+
+# Archivos de log
+*.log
+
+# Archivos de configuración de usuario local
+*.config.user
+
+# Archivos de prueba (si no están incluidos en el proyecto)
+TestResults/
+
+# Otros
+_ReSharper*/
+*.dotSettings

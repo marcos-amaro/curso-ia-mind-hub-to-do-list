@@ -99,6 +99,8 @@ export class TaskForm implements OnInit {
   }
 
   onCancel() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 }
